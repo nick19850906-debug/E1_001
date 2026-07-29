@@ -127,6 +127,20 @@ Server:
 WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
 user@c3r4s5 ~ % 
 
+### 📌 [점검 2] 터미널 조작 및 권한 변경 실습
+- **검증 방법:** 터미널에서 `mkdir`, `cd`로 디렉토리를 구성하고, `chmod` 명령어로 파일 권한을 755로 변경하여 `ls -al`로 확인
+- **터미널 출력 결과:**
+```bash
+user@c3r4s5 ~ % mkdir codyssey_workspace
+user@c3r4s5 ~ % cd codyssey_workspace
+user@c3r4s5 codyssey_workspace % touch mission_record.txt
+user@c3r4s5 codyssey_workspace % chmod 755 mission_record.txt
+user@c3r4s5 codyssey_workspace % ls -al
+total 0
+drwxr-xr-x   3 user  user   96  7 29 18:47 .
+drwxr-x---+ 23 user  user  736  7 29 18:42 ..
+-rwxr-xr-x   1 user  user    0  7 29 18:47 mission_record.txt
+
 
 ### 📌 [점검 3] 커스텀 도커 이미지 빌드
 - **검증 방법:** 터미널에서 `docker build`로 이미지를 만들고, `docker images`로 생성 확인
