@@ -16,7 +16,7 @@
 - [x] 권한 변경 실습 및 증명
 - [x] Docker 설치 및 데몬 동작 점검 (OrbStack)
 - [ ] hello-world 컨테이너 실행
-- [ ] 기존 Dockerfile 기반 커스텀 이미지 제작 및 빌드
+- [x] 기존 Dockerfile 기반 커스텀 이미지 제작 및 빌드
 - [ ] 포트 매핑 접속 (웹 브라우저 확인)
 - [ ] 바인드 마운트 반영 확인
 - [ ] Docker 볼륨 영속성 검증
@@ -125,4 +125,16 @@ Server:
  Firewall Backend: iptables
 
 WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
-c1134czi5625@c3r4s5 ~ % 
+user@c3r4s5 ~ % 
+
+
+### 📌 [점검 3] 커스텀 도커 이미지 빌드
+- **검증 방법:** 터미널에서 `docker build`로 이미지를 만들고, `docker images`로 생성 확인
+- **터미널 출력 결과:**
+```bash
+user@MacBook codyssey_workspace % docker build -t my-custom-web:1.0 .
+(도커가 열심히 포장하는 과정들이 쫘르륵 뜹니다...)
+
+user@MacBook codyssey_workspace % docker images
+REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
+my-custom-web      1.0       (생성된ID)      10 seconds ago  (용량)
