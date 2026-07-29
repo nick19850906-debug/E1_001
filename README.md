@@ -29,9 +29,9 @@
 - **터미널 출력 결과:**
 ```bash
 Last login: Wed Jul 29 17:42:08 on ttys002
-c1134czi5625@c3r4s5 ~ % docker --version
+************@c3r4s5 ~ % docker --version
 Docker version 29.4.0, build 9d7ad9f
-c1134czi5625@c3r4s5 ~ % docker info
+************@c3r4s5 ~ % docker info
 Client:
  Version:    29.4.0
  Context:    orbstack
@@ -39,10 +39,10 @@ Client:
  Plugins:
   buildx: Docker Buildx (Docker Inc.)
     Version:  v0.33.0
-    Path:     /Users/c1134czi5625/.docker/cli-plugins/docker-buildx
+    Path:     /Users/************/.docker/cli-plugins/docker-buildx
   compose: Docker Compose (Docker Inc.)
     Version:  v5.1.2
-    Path:     /Users/c1134czi5625/.docker/cli-plugins/docker-compose
+    Path:     /Users/************/.docker/cli-plugins/docker-compose
 
 Server:
  Containers: 0
