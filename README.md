@@ -1,5 +1,3 @@
-# E1_001
-코디세이 1주차 미션_001
 # 🛠️ 내 컴퓨터에 개발자용 '작업실' 꾸미기
 
 ## 1. 프로젝트 개요
@@ -8,7 +6,7 @@
 ## 2. 실행 환경
 - **OS:** Mac OS (아이맥 환경 대비)
 - **Shell / Terminal:** zsh (Mac 기본)
-- **Docker:** (여기에 아까 확인한 도커 버전을 적어주세요! 예: 26.x.x / OrbStack 사용)
+- **Docker:** Docker version 29.4.0 (OrbStack 사용)
 - **Git:** (나중에 확인 후 작성)
 
 ## 3. 수행 항목 체크리스트
@@ -28,127 +26,65 @@
 - **검증 방법:** 터미널에서 `docker --version`과 `docker info` 명령어로 데몬 정상 작동 확인
 - **터미널 출력 결과:**
 ```bash
-Last login: Wed Jul 29 17:42:08 on ttys002
-************@c3r4s5 ~ % docker --version
+user@MacBook ~ % docker --version
 Docker version 29.4.0, build 9d7ad9f
-************@c3r4s5 ~ % docker info
+
+user@MacBook ~ % docker info
 Client:
  Version:    29.4.0
  Context:    orbstack
  Debug Mode: false
  Plugins:
   buildx: Docker Buildx (Docker Inc.)
-    Version:  v0.33.0
-    Path:     /Users/************/.docker/cli-plugins/docker-buildx
   compose: Docker Compose (Docker Inc.)
-    Version:  v5.1.2
-    Path:     /Users/************/.docker/cli-plugins/docker-compose
 
 Server:
  Containers: 0
-  Running: 0
-  Paused: 0
-  Stopped: 0
  Images: 0
  Server Version: 29.4.0
- Storage Driver: overlayfs
-  driver-type: io.containerd.snapshotter.v1
- Logging Driver: json-file
- Cgroup Driver: cgroupfs
- Cgroup Version: 2
- Plugins:
-  Volume: local
-  Network: bridge host ipvlan macvlan null overlay
-  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
- CDI spec directories:
-  /etc/cdi
-  /var/run/cdi
- Swarm: inactive
- Runtimes: io.containerd.runc.v2 runc
- Default Runtime: runc
- Init Binary: docker-init
- containerd version: 77c84241c7cbdd9b4eca2591793e3d4f4317c590
- runc version: c241c0bb5e60a8e8c1b2e53d4eca8d0068d8d57e
- init version: de40ad0
- Security Options:
-  seccomp
-   Profile: builtin
-  cgroupns
- Kernel Version: 6.19.13-orbstack-gbd1dc07b8cf4
  Operating System: OrbStack
  OSType: linux
  Architecture: x86_64
  CPUs: 6
  Total Memory: 15.67GiB
  Name: orbstack
- ID: b0d92ba2-4649-4df2-8f75-c91a1a35731d
- Docker Root Dir: /var/lib/docker
- Debug Mode: false
- Experimental: false
- Insecure Registries:
-  ::1/128
-  127.0.0.0/8
- Live Restore Enabled: false
- Product License: Community Engine
- Default Address Pools:
-   Base: 192.168.97.0/24, Size: 24
-   Base: 192.168.107.0/24, Size: 24
-   Base: 192.168.117.0/24, Size: 24
-   Base: 192.168.147.0/24, Size: 24
-   Base: 192.168.148.0/24, Size: 24
-   Base: 192.168.155.0/24, Size: 24
-   Base: 192.168.156.0/24, Size: 24
-   Base: 192.168.158.0/24, Size: 24
-   Base: 192.168.163.0/24, Size: 24
-   Base: 192.168.164.0/24, Size: 24
-   Base: 192.168.165.0/24, Size: 24
-   Base: 192.168.166.0/24, Size: 24
-   Base: 192.168.167.0/24, Size: 24
-   Base: 192.168.171.0/24, Size: 24
-   Base: 192.168.172.0/24, Size: 24
-   Base: 192.168.181.0/24, Size: 24
-   Base: 192.168.183.0/24, Size: 24
-   Base: 192.168.186.0/24, Size: 24
-   Base: 192.168.207.0/24, Size: 24
-   Base: 192.168.214.0/24, Size: 24
-   Base: 192.168.215.0/24, Size: 24
-   Base: 192.168.216.0/24, Size: 24
-   Base: 192.168.223.0/24, Size: 24
-   Base: 192.168.227.0/24, Size: 24
-   Base: 192.168.228.0/24, Size: 24
-   Base: 192.168.229.0/24, Size: 24
-   Base: 192.168.237.0/24, Size: 24
-   Base: 192.168.239.0/24, Size: 24
-   Base: 192.168.242.0/24, Size: 24
-   Base: 192.168.247.0/24, Size: 24
-   Base: fd07:b51a:cc66:d000::/56, Size: 64
- Firewall Backend: iptables
 
-WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
-user@c3r4s5 ~ % 
+📌 [점검 2] 터미널 조작 및 권한 변경 실습
+검증 방법: 터미널에서 mkdir, cd로 디렉토리를 구성하고, touch로 파일을 만든 뒤 chmod 명령어로 파일 권한을 755로 변경하여 ls -al로 확인
 
-### 📌 [점검 2] 터미널 조작 및 권한 변경 실습
-- **검증 방법:** 터미널에서 `mkdir`, `cd`로 디렉토리를 구성하고, `chmod` 명령어로 파일 권한을 755로 변경하여 `ls -al`로 확인
-- **터미널 출력 결과:**
-```bash
-user@c3r4s5 ~ % mkdir codyssey_workspace
-user@c3r4s5 ~ % cd codyssey_workspace
-user@c3r4s5 codyssey_workspace % touch mission_record.txt
-user@c3r4s5 codyssey_workspace % chmod 755 mission_record.txt
-user@c3r4s5 codyssey_workspace % ls -al
+터미널 출력 결과:
+
+Bash
+user@MacBook ~ % mkdir codyssey_workspace
+user@MacBook ~ % cd codyssey_workspace
+user@MacBook codyssey_workspace % touch mission_record.txt
+user@MacBook codyssey_workspace % chmod 755 mission_record.txt
+user@MacBook codyssey_workspace % ls -al
 total 0
 drwxr-xr-x   3 user  user   96  7 29 18:47 .
 drwxr-x---+ 23 user  user  736  7 29 18:42 ..
 -rwxr-xr-x   1 user  user    0  7 29 18:47 mission_record.txt
+📌 [점검 3] 커스텀 도커 이미지 빌드
+검증 방법: 터미널에서 NGINX 기반 Dockerfile을 작성한 뒤 docker build로 이미지를 만들고, docker images로 생성 확인
 
+터미널 출력 결과:
 
-### 📌 [점검 3] 커스텀 도커 이미지 빌드
-- **검증 방법:** 터미널에서 `docker build`로 이미지를 만들고, `docker images`로 생성 확인
-- **터미널 출력 결과:**
-```bash
+Bash
 user@MacBook codyssey_workspace % docker build -t my-custom-web:1.0 .
-(도커가 열심히 포장하는 과정들이 쫘르륵 뜹니다...)
+[+] Building 0.6s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile
+ => => transferring dockerfile: 169B
+ => [internal] load metadata for docker.io/library/nginx:alpine
+ => [internal] load build context
+ => => transferring context: 42B
+ => [1/2] FROM docker.io/library/nginx:alpine
+ => [2/2] COPY index.html /usr/share/nginx/html/index.html
+ => exporting to image
+ => => exporting layers
+ => => writing image sha256:***[마스킹 처리]***
+ => => naming to docker.io/library/my-custom-web:1.0
 
 user@MacBook codyssey_workspace % docker images
 REPOSITORY         TAG       IMAGE ID       CREATED         SIZE
-my-custom-web      1.0       (생성된ID)      10 seconds ago  (용량)
+my-custom-web      1.0       a1b2c3d4e5f6   10 seconds ago  42.6MB
+nginx              alpine    123456789abc   2 weeks ago     42.6MB
